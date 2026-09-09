@@ -11,23 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCalculator();
 });
 
-function resetCalculatorForm() {
-    const form = document.getElementById("calc-form");
-    if (form) {
-        form.reset();
-        // Also hide optional section and custom date if open
-        const optionalSection = document.getElementById("optional-section");
-        const optIcon = document.getElementById("opt-toggle-icon");
-        if (optionalSection) optionalSection.style.display = "none";
-        if (optIcon) optIcon.innerText = "▾";
-
-        const customDateWrap = document.getElementById("date-custom-wrap");
-        if (customDateWrap) customDateWrap.style.display = "none";
-
-        updateCalculator();
-    }
-}
-
 function toggleFabricGuide() {
     const guide = document.getElementById("fabric-guide");
     if (guide) {
