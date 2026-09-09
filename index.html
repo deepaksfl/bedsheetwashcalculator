@@ -42,22 +42,16 @@
 
           <form id="calc-form">
 
-            <div class="form-action-bar">
-              <div class="step-header" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
-                <span class="step-title">
-                  <span class="step-icon-badge">⚡</span>
-                  Fast Bed Check
-                  <span class="step-start-tag">
-                    (Start Here) <span class="step-down-arrow">↓</span>
-                  </span>
+            <div class="step-header">
+              <span class="step-title">
+                <span class="step-icon-badge">⚡</span>
+                Fast Bed Check
+                <span class="step-start-tag">
+                  (Start Here) <span class="step-down-arrow">↓</span>
                 </span>
-                <span class="step-badge">Required</span>
-              </div>
-              <button type="button" class="btn-reset-form" onclick="resetCalculatorForm()" title="Reset all fields">
-                <span>🔄</span> Reset Form
-              </button>
+              </span>
+              <span class="step-badge">Required</span>
             </div>
-            <div class="form-divider"></div>
 
             <!-- Field 1: Last Wash -->
             <div class="field-group">
@@ -281,14 +275,14 @@
         <aside class="desktop-aside">
 
           <div class="metric-card">
-            <div class="integrated-status-badge" id="d-status-banner" style="background: var(--slate-100); color: var(--slate-600);">
-              <span class="status-dot" style="background: var(--slate-400);"></span>
+            <div class="integrated-status-badge" id="d-status-banner">
+              <span class="status-dot"></span>
               <span id="d-status-text">Awaiting your inputs</span>
             </div>
 
             <div class="metric-display-pod">
               <span class="metric-val-sub">Recommended Bedsheet Wash Interval</span>
-              <div class="metric-val" id="d-sheet-days" style="color: var(--slate-400); font-size: 1.5rem;">Select options</div>
+              <div class="metric-val" id="d-sheet-days">Select options</div>
             </div>
             
             <div class="target-wash-badge">
@@ -361,22 +355,22 @@
             <button class="btn-sheet-close" onclick="closeDrawer()">✕</button>
           </div>
 
-          <div class="integrated-status-badge" id="m-status-banner" style="margin-bottom: 16px; background: var(--slate-100); color: var(--slate-600);">
-            <span class="status-dot" style="background: var(--slate-400);"></span>
+          <div class="integrated-status-badge" id="m-status-banner">
+            <span class="status-dot"></span>
             <span id="m-status-text">Awaiting your inputs</span>
           </div>
 
-          <div class="metric-display-pod" style="margin-bottom: 12px;">
+          <div class="metric-display-pod">
             <span class="metric-val-sub">Recommended Bedsheet Wash Interval</span>
-            <div class="metric-val" id="m-sheet-days" style="color: var(--slate-400); font-size: 1.5rem;">Select options</div>
+            <div class="metric-val" id="m-sheet-days">Select options</div>
           </div>
 
-          <div class="target-wash-badge" style="margin-bottom: 12px; width: 100%;">
+          <div class="target-wash-badge">
             <span>🫧 Target Wash:</span>
             <b id="m-next-date">Select options</b>
           </div>
 
-          <div class="sub-cycle-grid" style="margin-bottom: 16px;">
+          <div class="sub-cycle-grid">
             <div class="sub-item-pillow">
               <span class="sub-label">💤 Pillowcases</span>
               <strong id="m-pillow-days">Select options</strong>
@@ -396,7 +390,7 @@
             <strong id="m-protector">Select options</strong>
           </div>
 
-          <div class="insight-card" style="margin-top: 14px;">
+          <div class="insight-card">
             <b>💡 Hygiene Insight:</b>
             <span id="m-tip-text">Please select your options on the left to generate your personalized bedding hygiene report.</span>
           </div>
