@@ -42,21 +42,27 @@
 
           <form id="calc-form">
 
-            <div class="step-header">
-              <span class="step-title">
-                <span class="step-icon-badge">⚡</span>
-                Fast Bed Check
-                <span class="step-start-tag">
-                  (Start Here) <span class="step-down-arrow">↓</span>
+            <div class="form-action-bar">
+              <div class="step-header" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+                <span class="step-title">
+                  <span class="step-icon-badge">⚡</span>
+                  Fast Bed Check
+                  <span class="step-start-tag">
+                    (Start Here) <span class="step-down-arrow">↓</span>
+                  </span>
                 </span>
-              </span>
-              <span class="step-badge">Required</span>
+                <span class="step-badge">Required</span>
+              </div>
+              <button type="button" class="btn-reset-form" onclick="resetCalculatorForm()" title="Reset all fields">
+                <span>🔄</span> Reset Form
+              </button>
             </div>
+            <div class="form-divider"></div>
 
             <!-- Field 1: Last Wash -->
             <div class="field-group">
               <label class="field-label" for="select-last-wash">
-                1a. When did you last wash these sheets?
+                <span class="field-num">1a.</span> When did you last wash these sheets?
               </label>
               <div class="select-wrap">
                 <select id="select-last-wash" class="custom-select">
@@ -84,7 +90,7 @@
             <!-- Field 2: Occupancy -->
             <div class="field-group">
               <label class="field-label" for="select-sleepers">
-                1b. Who sleeps in this bed?
+                <span class="field-num">1b.</span> Who sleeps in this bed?
               </label>
               <div class="select-wrap">
                 <select id="select-sleepers" class="custom-select">
@@ -103,7 +109,7 @@
             <!-- Field 3: Skin Contact -->
             <div class="field-group">
               <label class="field-label" for="select-attire">
-                1c. How much bare skin touches the sheets?
+                <span class="field-num">1c.</span> How much bare skin touches the sheets?
               </label>
               <div class="select-wrap">
                 <select id="select-attire" class="custom-select">
@@ -121,7 +127,7 @@
             <!-- Field 4: Fabric Feel -->
             <div class="field-group">
               <label class="field-label" for="select-fabric">
-                1d. How does your sheet feel to the touch?
+                <span class="field-num">1d.</span> How does your sheet feel to the touch?
               </label>
               <div class="select-wrap">
                 <select id="select-fabric" class="custom-select">
@@ -169,7 +175,7 @@
 
               <div class="field-group">
                 <label class="field-label" for="select-shower">
-                  2a. When do you usually shower?
+                  <span class="field-num">2a.</span> When do you usually shower?
                 </label>
                 <div class="select-wrap">
                   <select id="select-shower" class="custom-select">
@@ -185,7 +191,7 @@
 
               <div class="field-group">
                 <label class="field-label" for="select-climate">
-                  2b. Room Climate & Sweating
+                  <span class="field-num">2b.</span> Room Climate & Sweating
                 </label>
                 <div class="select-wrap">
                   <select id="select-climate" class="custom-select">
@@ -201,7 +207,7 @@
 
               <div class="field-group">
                 <label class="field-label" for="select-pets">
-                  2c. Do pets sleep in or on the bed?
+                  <span class="field-num">2c.</span> Do pets sleep in or on the bed?
                 </label>
                 <div class="select-wrap">
                   <select id="select-pets" class="custom-select">
@@ -218,7 +224,7 @@
 
               <div class="field-group">
                 <label class="field-label" for="select-skincare">
-                  2d. Facial skincare & skin sensitivity
+                  <span class="field-num">2d.</span> Facial skincare & skin sensitivity
                 </label>
                 <div class="select-wrap">
                   <select id="select-skincare" class="custom-select">
@@ -235,7 +241,7 @@
 
               <div class="field-group">
                 <label class="field-label" for="select-allergies">
-                  2e. Allergies & breathing sensitivities
+                  <span class="field-num">2e.</span> Allergies & breathing sensitivities
                 </label>
                 <div class="select-wrap">
                   <select id="select-allergies" class="custom-select">
@@ -252,7 +258,7 @@
 
               <div class="field-group">
                 <label class="field-label" for="select-illness">
-                  2f. Recent illness or infection
+                  <span class="field-num">2f.</span> Recent illness or infection
                 </label>
                 <div class="select-wrap">
                   <select id="select-illness" class="custom-select">
@@ -282,22 +288,22 @@
 
             <div class="metric-display-pod">
               <span class="metric-val-sub">Recommended Bedsheet Wash Interval</span>
-              <div class="metric-val" id="d-sheet-days" style="color: var(--slate-400); font-size: 1.5rem;">—</div>
+              <div class="metric-val" id="d-sheet-days" style="color: var(--slate-400); font-size: 1.5rem;">Select options</div>
             </div>
             
             <div class="target-wash-badge">
               <span>🫧 Target Wash:</span>
-              <b id="d-next-date">Please complete form</b>
+              <b id="d-next-date">Select options</b>
             </div>
 
             <div class="sub-cycle-grid">
               <div class="sub-item-pillow">
                 <span class="sub-label">💤 Pillowcases</span>
-                <strong id="d-pillow-days">—</strong>
+                <strong id="d-pillow-days">Select options</strong>
               </div>
               <div class="sub-item-duvet">
                 <span class="sub-label">🪶 Duvet / Blanket</span>
-                <strong id="d-duvet-days">—</strong>
+                <strong id="d-duvet-days">Select options</strong>
               </div>
             </div>
 
@@ -306,21 +312,21 @@
           <div class="wash-specs">
             <div class="spec-row">
               <span>🧼 Safe Water Temperature</span>
-              <strong id="d-temp">—</strong>
+              <strong id="d-temp">Select options</strong>
             </div>
             <div class="spec-row">
               <span>🛡️ Mattress Protector</span>
-              <strong id="d-protector">—</strong>
+              <strong id="d-protector">Select options</strong>
             </div>
             <div class="spec-row">
               <span>☀️ Drying Setting</span>
-              <strong id="d-dry">—</strong>
+              <strong id="d-dry">Select options</strong>
             </div>
           </div>
 
           <div class="insight-card" id="d-tip-box">
             <b>💡 Hygiene Insight:</b>
-            <span id="d-tip-text">Select your preferences from the questions on the left to generate your personalized bedding hygiene report.</span>
+            <span id="d-tip-text">Please select your options on the left to generate your personalized bedding hygiene report.</span>
           </div>
 
           <div class="action-button-group">
@@ -341,7 +347,7 @@
       <!-- Mobile Sticky Bottom Bar -->
       <div class="mobile-dock">
         <div class="dock-info">
-          <span id="m-bar-sub">Status Checking</span>
+          <span id="m-bar-sub">Awaiting your inputs</span>
           <strong id="m-bar-val">Select options</strong>
         </div>
         <button class="btn-dock-action" onclick="openDrawer()">View Schedule</button>
@@ -362,37 +368,37 @@
 
           <div class="metric-display-pod" style="margin-bottom: 12px;">
             <span class="metric-val-sub">Recommended Bedsheet Wash Interval</span>
-            <div class="metric-val" id="m-sheet-days" style="color: var(--slate-400); font-size: 1.5rem;">—</div>
+            <div class="metric-val" id="m-sheet-days" style="color: var(--slate-400); font-size: 1.5rem;">Select options</div>
           </div>
 
           <div class="target-wash-badge" style="margin-bottom: 12px; width: 100%;">
             <span>🫧 Target Wash:</span>
-            <b id="m-next-date">Please complete form</b>
+            <b id="m-next-date">Select options</b>
           </div>
 
           <div class="sub-cycle-grid" style="margin-bottom: 16px;">
             <div class="sub-item-pillow">
               <span class="sub-label">💤 Pillowcases</span>
-              <strong id="m-pillow-days">—</strong>
+              <strong id="m-pillow-days">Select options</strong>
             </div>
             <div class="sub-item-duvet">
               <span class="sub-label">🪶 Duvet / Blanket</span>
-              <strong id="m-duvet-days">—</strong>
+              <strong id="m-duvet-days">Select options</strong>
             </div>
           </div>
 
           <div class="spec-row">
             <span>🧼 Safe Water Temp</span>
-            <strong id="m-temp">—</strong>
+            <strong id="m-temp">Select options</strong>
           </div>
           <div class="spec-row">
             <span>🛡️ Mattress Protector</span>
-            <strong id="m-protector">—</strong>
+            <strong id="m-protector">Select options</strong>
           </div>
 
           <div class="insight-card" style="margin-top: 14px;">
             <b>💡 Hygiene Insight:</b>
-            <span id="m-tip-text">Select your preferences from the questions on the left to generate your personalized bedding hygiene report.</span>
+            <span id="m-tip-text">Please select your options on the left to generate your personalized bedding hygiene report.</span>
           </div>
 
           <div class="action-button-group">
