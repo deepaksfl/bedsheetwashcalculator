@@ -33,10 +33,6 @@
         <main class="form-panel">
 
           <div class="header-block">
-            <div class="badge-hygiene">
-              <span>🫧</span>
-              Smart Home Linen Care
-            </div>
             
             <h1 class="brand-title">
               <span class="brand-icon-wrapper">🛏️🧺</span>
@@ -66,6 +62,7 @@
               </label>
               <div class="select-wrap">
                 <select id="select-last-wash" class="custom-select">
+                  <option value="" disabled selected>Pick your option...</option>
                   <option value="0">Today</option>
                   <option value="1">Yesterday</option>
                   <option value="4">3–4 days ago</option>
@@ -73,7 +70,7 @@
                   <option value="14">2 weeks ago</option>
                   <option value="21">3 weeks ago</option>
                   <option value="30">One month ago</option>
-                  <option value="unknown" selected>I don't remember</option>
+                  <option value="unknown">Honestly... it's been a while</option>
                   <option value="custom" class="option-calendar-pick">Pick exact calendar date...</option>
                 </select>
                 <div class="select-chevron">
@@ -93,6 +90,7 @@
               </label>
               <div class="select-wrap">
                 <select id="select-sleepers" class="custom-select">
+                  <option value="" disabled selected>Pick your option...</option>
                   <option value="1">1 Person (Solo Sleeper)</option>
                   <option value="2">2 Adults (Couple)</option>
                   <option value="family">Family Bed (Co-sleeping with Baby / Toddler)</option>
@@ -111,7 +109,8 @@
               </label>
               <div class="select-wrap">
                 <select id="select-attire" class="custom-select">
-                  <option value="light" selected>Standard / Partial (Shorts, t-shirt, or light sleepwear)</option>
+                  <option value="" disabled selected>Pick your option...</option>
+                  <option value="light">Standard / Partial (Shorts, t-shirt, or light sleepwear)</option>
                   <option value="pajamas">Mostly covered (Long pajama set / full fabric barrier)</option>
                   <option value="nude">Minimal coverage (Underwear only or sleeping without clothes)</option>
                 </select>
@@ -128,7 +127,8 @@
               </label>
               <div class="select-wrap">
                 <select id="select-fabric" class="custom-select">
-                  <option value="standard" selected>Not sure / Standard everyday bedsheet</option>
+                  <option value="" disabled selected>Pick your option...</option>
+                  <option value="standard">Not sure / Standard everyday bedsheet</option>
                   <option value="cotton">Crisp, cool & natural (Like a hotel sheet / Cotton)</option>
                   <option value="silk">Slippery, glossy, or shiny (Silk / Satin)</option>
                   <option value="poly">Stretchy, very light, or microfiber (Synthetic)</option>
@@ -175,6 +175,7 @@
                 </label>
                 <div class="select-wrap">
                   <select id="select-shower" class="custom-select">
+                    <option value="" disabled selected>Pick your option...</option>
                     <option value="bed">Right before getting into bed (Cleanest sheets)</option>
                     <option value="morning">Morning or midday (Transfers daytime dirt)</option>
                   </select>
@@ -190,6 +191,7 @@
                 </label>
                 <div class="select-wrap">
                   <select id="select-climate" class="custom-select">
+                    <option value="" disabled selected>Pick your option...</option>
                     <option value="cool">Cool AC / Fan running / Rarely sweat</option>
                     <option value="warm">Warm room / Frequent night sweats / Humid</option>
                   </select>
@@ -205,7 +207,8 @@
                 </label>
                 <div class="select-wrap">
                   <select id="select-pets" class="custom-select">
-                    <option value="none" selected>No pets in bed</option>
+                    <option value="" disabled selected>Pick your option...</option>
+                    <option value="none">No pets in bed</option>
                     <option value="top">Pet sleeps on top of duvet / foot of bed</option>
                     <option value="inside">Pet sleeps under the covers / sheds heavily</option>
                   </select>
@@ -221,7 +224,8 @@
                 </label>
                 <div class="select-wrap">
                   <select id="select-skincare" class="custom-select">
-                    <option value="normal" selected>Normal skin / Bare face at night</option>
+                    <option value="" disabled selected>Pick your option...</option>
+                    <option value="normal">Normal skin / Bare face at night</option>
                     <option value="creams">Heavy night creams, retinol, or hair oil</option>
                     <option value="acne">Acne-prone skin / Frequent breakouts</option>
                   </select>
@@ -237,7 +241,8 @@
                 </label>
                 <div class="select-wrap">
                   <select id="select-allergies" class="custom-select">
-                    <option value="none" selected>No dust or respiratory allergies</option>
+                    <option value="" disabled selected>Pick your option...</option>
+                    <option value="none">No dust or respiratory allergies</option>
                     <option value="mild">Mild seasonal allergies</option>
                     <option value="severe">Asthma or diagnosed dust mite allergy</option>
                   </select>
@@ -253,7 +258,8 @@
                 </label>
                 <div class="select-wrap">
                   <select id="select-illness" class="custom-select">
-                    <option value="healthy" selected>Everyone healthy</option>
+                    <option value="" disabled selected>Pick your option...</option>
+                    <option value="healthy">Everyone healthy</option>
                     <option value="sick">Currently or recently sick (Cold / Flu / Fever)</option>
                   </select>
                   <div class="select-chevron">
