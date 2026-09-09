@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Blog & Linen Care Tips | BedsheetWashCalculator.com</title>
+    
+    <!-- SEO META DESCRIPTION -->
+    <meta name="description" content="Read lighthearted stories, linen care guides, and expert sleep hygiene insights from BedsheetWashCalculator.com." />
+    
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Matching Homepage Color Variables (Neutral / No Blue) --- */
+        :root {
+            --primary: #1f2937;
+            --primary-dark: #111827;
+            --primary-light: #f3f4f6;
+            --slate-50: #f9fafb;
+            --slate-100: #f3f4f6;
+            --slate-250: #e5e7eb;
+            --slate-700: #374151;
+            --slate-800: #1f2937;
+            --slate-900: #111827;
+            --slate-500: #6b7280;
+            --card-bg: #ffffff;
+            --border-box: #e5e7eb;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --radius-lg: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--slate-100);
+            color: var(--slate-800);
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Main Layout Wrapper --- */
+        .blog-page-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+            flex: 1;
+        }
+
+        /* --- Navigation Helper --- */
+        .back-nav {
+            margin-bottom: 2rem;
+        }
+
+        .back-calculator-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--card-bg);
+            color: var(--slate-900);
+            border: 1px solid var(--border-box);
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s ease;
+        }
+
+        .back-calculator-btn:hover {
+            background-color: var(--slate-900);
+            color: var(--card-bg);
+            border-color: var(--slate-900);
+            transform: translateY(-1px);
+        }
+
+        /* --- Single Post Grid Layout --- */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* --- Blog Card Styles --- */
+        .blog-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-box);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- Image Fragment with Linear Gradient & Overlay Title --- */
+        .blog-card-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            background-color: var(--slate-100);
+        }
+
+        .blog-card-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .blog-card-image-wrapper img {
+            transform: scale(1.03);
+        }
+
+        /* Linear Gradient Overlay */
+        .blog-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(17, 24, 39, 0.2) 0%, rgba(17, 24, 39, 0.85) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.25rem;
+        }
+
+        /* Short & Catchy Overlay Title */
+        .overlay-title {
+            color: #ffffff;
+            font-size: 1.15rem;
+            font-weight: 800;
+            line-height: 1.35;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* --- Blog Card Content Body --- */
+        .blog-card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .blog-card p {
+            font-size: 0.95rem;
+            color: var(--slate-600, #4b5563);
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .blog-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--slate-100);
+            padding-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--slate-500);
+        }
+
+        .read-more-btn {
+            background-color: var(--slate-900);
+            color: #ffffff;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .read-more-btn:hover {
+            opacity: 0.85;
+        }
+
+        /* --- Clean Footer --- */
+        .site-footer {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-box);
+            text-align: center;
+            padding: 1.5rem;
+            color: var(--slate-500);
+            font-size: 0.875rem;
+            margin-top: auto;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 900px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+                max-width: 460px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="blog-page-wrapper">
+        
+        <!-- Back to Calculator Button -->
+        <div class="back-nav">
+            <a href="index.html" class="back-calculator-btn">
+                <span>🛏️</span> Back to Calculator
+            </a>
+        </div>
+
+        <!-- Grid with only 1 active post -->
+        <div class="blog-grid" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+            
+            <!-- Live Post 1 -->
+            <article class="blog-card" style="grid-column: span 1;">
+                <div class="blog-card-image-wrapper">
+                    <img src="images/bed-sheet-cocoon.png" alt="Cartoon illustration of a young female wrapped tightly like a burrito in a light-patterned bedsheet on her bed, looking thoughtfully up at the ceiling" width="1440" height="800" loading="lazy">
+                    <div class="blog-card-overlay">
+                        <h2 class="overlay-title">The Late-Night Bed Sheet Cocoon & Existential Crises</h2>
+                    </div>
+                </div>
+                <div class="blog-card-content">
+                    <p>Have you ever wrapped yourself tightly in a bed sheet and started questioning every life choice you made? You are not alone.</p>
+                    <div class="blog-card-footer">
+                        <span>3 min read</span>
+                        <a href="bed-sheet-cocoon-existential-crises.html" class="read-more-btn">Read Post →</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div>© 2026 BedsheetWashCalculator.com. All rights reserved. Crafted for fresh, hygienic & allergy-free bedsheets.</div>
+    </footer>
+
+</body>
+</html>

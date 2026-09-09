@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>BedsheetWashCalculator.com — Bed Sheet Wash Frequency & Hygiene Checker</title>
+  
+  <!-- SEO META DESCRIPTION -->
+  <meta name="description" content="Use the free Bedsheet Wash Calculator to find your optimal bed sheet, pillowcase, and duvet cleaning frequency based on sleep habits, room climate, and skin sensitivity." />
+  <meta name="keywords" content="bed sheet wash calculator, how often to wash sheets, bedding hygiene, dust mite calculator, laundry schedule" />
+  
+  <!-- FAVICON PLACEHOLDER -->
+  <link rel="icon" href="images/favicon.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- LINKED CSS STYLESHEET -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="linen-app">
+    <div class="linen-container">
+
+      <!-- TOP 2-COLUMN APP GRID -->
+      <div class="app-grid">
+
+        <!-- LEFT COLUMN: HEADER + FORM PANEL -->
+        <main class="form-panel">
+
+          <div class="header-block">
+            <div class="badge-hygiene">
+              <span>🫧</span>
+              Smart Home Linen Care
+            </div>
+            
+            <h1 class="brand-title">
+              <span class="brand-icon-wrapper">🛏️🧺</span>
+              <span class="brand-bedsheet">Bedsheet</span><span class="brand-wash">Wash</span><span class="brand-calc">Calculator.com</span>
+            </h1>
+
+            <p class="header-subtext">Are your sheets clean or overdue? Find your optimal wash day in seconds.</p>
+          </div>
+
+          <form id="calc-form">
+
+            <div class="step-header">
+              <span class="step-title">
+                <span class="step-icon-badge">⚡</span>
+                Fast Bed Check
+                <span class="step-start-tag">
+                  (Start Here) <span class="step-down-arrow">↓</span>
+                </span>
+              </span>
+              <span class="step-badge">Required</span>
+            </div>
+
+            <!-- Field 1: Last Wash -->
+            <div class="field-group">
+              <label class="field-label" for="select-last-wash">
+                1a. When did you last wash these sheets?
+              </label>
+              <div class="select-wrap">
+                <select id="select-last-wash" class="custom-select">
+                  <option value="0">Today</option>
+                  <option value="1">Yesterday</option>
+                  <option value="4">3–4 days ago</option>
+                  <option value="7">1 week ago</option>
+                  <option value="14">2 weeks ago</option>
+                  <option value="21">3 weeks ago</option>
+                  <option value="30">One month ago</option>
+                  <option value="unknown" selected>I don't remember</option>
+                  <option value="custom" class="option-calendar-pick">Pick exact calendar date...</option>
+                </select>
+                <div class="select-chevron">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+              </div>
+
+              <div class="date-custom-field" id="date-custom-wrap">
+                <input type="date" id="exact-date-input" class="custom-date-input" />
+              </div>
+            </div>
+
+            <!-- Field 2: Occupancy -->
+            <div class="field-group">
+              <label class="field-label" for="select-sleepers">
+                1b. Who sleeps in this bed?
+              </label>
+              <div class="select-wrap">
+                <select id="select-sleepers" class="custom-select">
+                  <option value="1">1 Person (Solo Sleeper)</option>
+                  <option value="2">2 Adults (Couple)</option>
+                  <option value="family">Family Bed (Co-sleeping with Baby / Toddler)</option>
+                  <option value="dorm">College Dorm / Guest Bed</option>
+                </select>
+                <div class="select-chevron">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Field 3: Skin Contact -->
+            <div class="field-group">
+              <label class="field-label" for="select-attire">
+                1c. How much bare skin touches the sheets?
+              </label>
+              <div class="select-wrap">
+                <select id="select-attire" class="custom-select">
+                  <option value="light" selected>Standard / Partial (Shorts, t-shirt, or light sleepwear)</option>
+                  <option value="pajamas">Mostly covered (Long pajama set / full fabric barrier)</option>
+                  <option value="nude">Minimal coverage (Underwear only or sleeping without clothes)</option>
+                </select>
+                <div class="select-chevron">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Field 4: Fabric Feel -->
+            <div class="field-group">
+              <label class="field-label" for="select-fabric">
+                1d. How does your sheet feel to the touch?
+              </label>
+              <div class="select-wrap">
+                <select id="select-fabric" class="custom-select">
+                  <option value="standard" selected>Not sure / Standard everyday bedsheet</option>
+                  <option value="cotton">Crisp, cool & natural (Like a hotel sheet / Cotton)</option>
+                  <option value="silk">Slippery, glossy, or shiny (Silk / Satin)</option>
+                  <option value="poly">Stretchy, very light, or microfiber (Synthetic)</option>
+                  <option value="flannel">Warm, fuzzy, or brushed (Flannel / Winter fleece)</option>
+                </select>
+                <div class="select-chevron">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+              </div>
+
+              <button type="button" class="fabric-helper-toggle" onclick="toggleFabricGuide()">
+                <span>Not sure which one you have? Click here</span>
+              </button>
+
+              <div class="fabric-guide-card" id="fabric-guide">
+                <b>Quick 5-second test:</b>
+                <ul>
+                  <li><b>Standard / Cotton:</b> Feels like a regular cotton t-shirt or crisp dress shirt. Slight crease when bunched.</li>
+                  <li><b>Microfiber:</b> Ultra-lightweight, smooth, dries rapidly, often catches dry fingertips slightly.</li>
+                  <li><b>Silk / Satin:</b> Glossy, slippery, very cool to the touch.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- OPTIONAL ACCORDION -->
+            <button type="button" class="optional-toggle-btn" onclick="toggleOptionalSection()">
+              <span>🐾 Any pets, night creams, or allergies? (Optional)</span>
+              <span class="toggle-icon" id="opt-toggle-icon">▾</span>
+            </button>
+
+            <div class="optional-block" id="optional-section">
+              
+              <div class="step-header" style="margin-top: 16px;">
+                <span class="step-title">
+                  <span class="step-icon-badge">🌿</span>
+                  Extra Details
+                </span>
+                <span class="step-badge" style="background: var(--slate-100); color: var(--slate-800); border: 1px solid var(--border-box); box-shadow: none;">Optional</span>
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="select-shower">
+                  2a. When do you usually shower?
+                </label>
+                <div class="select-wrap">
+                  <select id="select-shower" class="custom-select">
+                    <option value="bed">Right before getting into bed (Cleanest sheets)</option>
+                    <option value="morning">Morning or midday (Transfers daytime dirt)</option>
+                  </select>
+                  <div class="select-chevron">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="select-climate">
+                  2b. Room Climate & Sweating
+                </label>
+                <div class="select-wrap">
+                  <select id="select-climate" class="custom-select">
+                    <option value="cool">Cool AC / Fan running / Rarely sweat</option>
+                    <option value="warm">Warm room / Frequent night sweats / Humid</option>
+                  </select>
+                  <div class="select-chevron">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="select-pets">
+                  2c. Do pets sleep in or on the bed?
+                </label>
+                <div class="select-wrap">
+                  <select id="select-pets" class="custom-select">
+                    <option value="none" selected>No pets in bed</option>
+                    <option value="top">Pet sleeps on top of duvet / foot of bed</option>
+                    <option value="inside">Pet sleeps under the covers / sheds heavily</option>
+                  </select>
+                  <div class="select-chevron">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="select-skincare">
+                  2d. Facial skincare & skin sensitivity
+                </label>
+                <div class="select-wrap">
+                  <select id="select-skincare" class="custom-select">
+                    <option value="normal" selected>Normal skin / Bare face at night</option>
+                    <option value="creams">Heavy night creams, retinol, or hair oil</option>
+                    <option value="acne">Acne-prone skin / Frequent breakouts</option>
+                  </select>
+                  <div class="select-chevron">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="select-allergies">
+                  2e. Allergies & breathing sensitivities
+                </label>
+                <div class="select-wrap">
+                  <select id="select-allergies" class="custom-select">
+                    <option value="none" selected>No dust or respiratory allergies</option>
+                    <option value="mild">Mild seasonal allergies</option>
+                    <option value="severe">Asthma or diagnosed dust mite allergy</option>
+                  </select>
+                  <div class="select-chevron">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="select-illness">
+                  2f. Recent illness or infection
+                </label>
+                <div class="select-wrap">
+                  <select id="select-illness" class="custom-select">
+                    <option value="healthy" selected>Everyone healthy</option>
+                    <option value="sick">Currently or recently sick (Cold / Flu / Fever)</option>
+                  </select>
+                  <div class="select-chevron">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </form>
+        </main>
+
+        <!-- RIGHT COLUMN: STICKY RESULTS DASHBOARD -->
+        <aside class="desktop-aside">
+
+          <div class="metric-card">
+            <div class="integrated-status-badge" id="d-status-banner">
+              <span class="status-dot"></span>
+              <span id="d-status-text">Hygiene reset needed</span>
+            </div>
+
+            <div class="metric-display-pod">
+              <span class="metric-val-sub">Recommended Bedsheet Wash Interval</span>
+              <div class="metric-val" id="d-sheet-days">Every 9 Days</div>
+            </div>
+            
+            <div class="target-wash-badge">
+              <span>🫧 Target Wash:</span>
+              <b id="d-next-date">Loading...</b>
+            </div>
+
+            <div class="sub-cycle-grid">
+              <div class="sub-item-pillow">
+                <span class="sub-label">💤 Pillowcases</span>
+                <strong id="d-pillow-days">Every 4 Days</strong>
+              </div>
+              <div class="sub-item-duvet">
+                <span class="sub-label">🪶 Duvet / Blanket</span>
+                <strong id="d-duvet-days">Every 4 Weeks</strong>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="wash-specs">
+            <div class="spec-row">
+              <span>🧼 Safe Water Temperature</span>
+              <strong id="d-temp">60°C (140°F)</strong>
+            </div>
+            <div class="spec-row">
+              <span>🛡️ Mattress Protector</span>
+              <strong id="d-protector">Recommended</strong>
+            </div>
+            <div class="spec-row">
+              <span>☀️ Drying Setting</span>
+              <strong id="d-dry">Tumble Warm / Sun</strong>
+            </div>
+          </div>
+
+          <div class="insight-card" id="d-tip-box">
+            <b>💡 Hygiene Insight:</b>
+            <span id="d-tip-text">Loading insights...</span>
+          </div>
+
+          <div class="action-button-group">
+            <button class="btn-download-ics" onclick="exportCalendarReminder()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              Download Calendar (.ics)
+            </button>
+            <a id="btn-gcal" class="btn-gcal-brand" href="#" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              Add to Google Calendar
+            </a>
+          </div>
+
+        </aside>
+
+      </div>
+
+      <!-- Mobile Sticky Bottom Bar -->
+      <div class="mobile-dock">
+        <div class="dock-info">
+          <span id="m-bar-sub">Status Checking</span>
+          <strong id="m-bar-val">Every 9 Days</strong>
+        </div>
+        <button class="btn-dock-action" onclick="openDrawer()">View Schedule</button>
+      </div>
+
+      <!-- Mobile Slide-Up Modal Drawer -->
+      <div class="sheet-overlay" id="sheet-overlay" onclick="handleOverlayClick(event)">
+        <div class="sheet-body">
+          <div class="sheet-head">
+            <h3>🛏️ Bedding Hygiene Report</h3>
+            <button class="btn-sheet-close" onclick="closeDrawer()">✕</button>
+          </div>
+
+          <div class="integrated-status-badge" id="m-status-banner" style="margin-bottom: 16px;">
+            <span class="status-dot"></span>
+            <span id="m-status-text">Hygiene reset needed</span>
+          </div>
+
+          <div class="metric-display-pod" style="margin-bottom: 12px;">
+            <span class="metric-val-sub">Recommended Bedsheet Wash Interval</span>
+            <div class="metric-val" id="m-sheet-days">Every 9 Days</div>
+          </div>
+
+          <div class="target-wash-badge" style="margin-bottom: 12px; width: 100%;">
+            <span>🫧 Target Wash:</span>
+            <b id="m-next-date">Loading...</b>
+          </div>
+
+          <div class="sub-cycle-grid" style="margin-bottom: 16px;">
+            <div class="sub-item-pillow">
+              <span class="sub-label">💤 Pillowcases</span>
+              <strong id="m-pillow-days">Every 4 Days</strong>
+            </div>
+            <div class="sub-item-duvet">
+              <span class="sub-label">🪶 Duvet / Blanket</span>
+              <strong id="m-duvet-days">Every 4 Weeks</strong>
+            </div>
+          </div>
+
+          <div class="spec-row">
+            <span>🧼 Safe Water Temp</span>
+            <strong id="m-temp">60°C (140°F)</strong>
+          </div>
+          <div class="spec-row">
+            <span>🛡️ Mattress Protector</span>
+            <strong id="m-protector">Recommended</strong>
+          </div>
+
+          <div class="insight-card" style="margin-top: 14px;">
+            <b>💡 Hygiene Insight:</b>
+            <span id="m-tip-text"></span>
+          </div>
+
+          <div class="action-button-group">
+            <button class="btn-download-ics" onclick="exportCalendarReminder()">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              Download Calendar Event (.ics)
+            </button>
+            <a id="btn-gcal-mobile" class="btn-gcal-brand" href="#" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              Add to Google Calendar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENJOY THIS CALCULATOR BANNER -->
+      <div class="enjoy-calculator-banner">
+        <div class="enjoy-title">
+          <span>⭐</span> Enjoying this calculator?
+        </div>
+        <div class="enjoy-subtitle">Help friends keep their beds fresh, hygienic & allergy-free!</div>
+        
+        <div class="rating-stars" onclick="rateCalculator()">
+          <span class="star active">★</span>
+          <span class="star active">★</span>
+          <span class="star active">★</span>
+          <span class="star active">★</span>
+          <span class="star active">★</span>
+        </div>
+        <div class="rating-feedback" id="rating-feedback">Thank you for rating! 🌟</div>
+
+        <div class="enjoy-actions">
+          <button class="btn-enjoy-share" onclick="triggerNativeShare()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+            Share with Friends
+          </button>
+          <button class="btn-enjoy-copy" onclick="copyEnjoyLink()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            Copy Link
+          </button>
+        </div>
+        <div class="copy-toast" id="enjoy-copy-toast">✓ Link copied successfully!</div>
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="site-footer">
+        
+        <div class="disclaimer-box">
+          <strong>Medical & Hygiene Disclaimer:</strong> This tool provides evidence-based household hygiene estimates for informational purposes only. It is not intended as medical, dermatological, or clinical advice. Consult a certified medical specialist or dermatologist for chronic skin conditions, severe respiratory allergies, or contagious infections.
+        </div>
+
+        <nav class="footer-nav">
+          <a class="footer-link" href="blog.html">Blog</a>
+          <a class="footer-link" href="policy.html">Policy</a>
+          <a class="footer-link" href="terms.html">Terms</a>
+          <a class="footer-link" href="contact.html">Contact</a>
+        </nav>
+
+        <div class="footer-copy">
+          © 2026 BedsheetWashCalculator.com. All rights reserved. Crafted for fresh, hygienic & allergy-free bedsheets.
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- LINKED JAVASCRIPT FILE -->
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Contact Us — BedsheetWashCalculator.com</title>
+  
+  <meta name="description" content="Get in touch with the BedsheetWashCalculator.com team. Reach out via email or connect with us on social media for support and feedback." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Contact Specific Card Styling (Text-Only, White Background, Border Color) */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    @media (min-width: 640px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .contact-card {
+      background: var(--pure-white);
+      border: 2px solid var(--border-box);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    }
+
+    .contact-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(154, 52, 18, 0.08);
+    }
+
+    .contact-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary); /* Matched to resource/platform title color */
+    }
+
+    .contact-value {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--slate-950);
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="linen-app">
+    <div class="linen-container">
+
+      <!-- HEADER NAVIGATION -->
+      <header class="header-block" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+        <div>
+          <div class="badge-hygiene"><span>📬</span> Get in Touch</div>
+          <h1 class="brand-title" style="font-size: clamp(1.3rem, 2.5vw, 1.8rem);">Contact Us</h1>
+        </div>
+        <a href="index.html" class="btn-enjoy-copy" style="text-decoration: none;">← Back to Calculator</a>
+      </header>
+
+      <!-- CONTENT PANEL -->
+      <main class="form-panel" style="line-height: 1.7; color: var(--slate-800);">
+        
+        <h3 style="color: var(--slate-950); font-weight: 900; margin-bottom: 8px;">We’d Love to Hear From You!</h3>
+        <p style="color: var(--slate-700); margin-bottom: 16px;">Have questions about laundry schedules, suggestions for the calculator, or want to connect? Reach out to us through email or find us across our social media channels below.</p>
+
+        <!-- SOCIAL & EMAIL GRID -->
+        <div class="contact-grid">
+
+          <!-- Email Card -->
+          <a href="mailto:support@bedsheetwashcalculator.com" class="contact-card">
+            <span class="contact-title">Email Support</span>
+            <span class="contact-value">support@bedsheetwashcalculator.com</span>
+          </a>
+
+          <!-- Instagram Card -->
+          <a href="https://instagram.com/yourusername" target="_blank" rel="noopener" class="contact-card">
+            <span class="contact-title">Instagram</span>
+            <span class="contact-value">@yourusername</span>
+          </a>
+
+          <!-- Pinterest Card -->
+          <a href="https://pinterest.com/yourusername" target="_blank" rel="noopener" class="contact-card">
+            <span class="contact-title">Pinterest</span>
+            <span class="contact-value">@yourusername</span>
+          </a>
+
+          <!-- X (Twitter) Card -->
+          <a href="https://x.com/yourusername" target="_blank" rel="noopener" class="contact-card">
+            <span class="contact-title">X (Twitter)</span>
+            <span class="contact-value">@yourusername</span>
+          </a>
+
+        </div>
+
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="site-footer">
+        <nav class="footer-nav">
+          <a class="footer-link" href="index.html">Home</a>
+          <a class="footer-link" href="blog.html">Blog</a>
+          <a class="footer-link" href="policy.html">Policy</a>
+          <a class="footer-link" href="terms.html">Terms</a>
+          <a class="footer-link" href="contact.html" style="color: var(--primary);">Contact</a>
+        </nav>
+        <div class="footer-copy">
+          © 2026 BedsheetWashCalculator.com. All rights reserved.
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+</body>
+</html>
