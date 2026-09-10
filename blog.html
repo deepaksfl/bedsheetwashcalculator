@@ -86,10 +86,10 @@
             transform: translateY(-1px);
         }
 
-        /* --- Single Post Grid Layout --- */
+        /* --- Desktop Grid Layout --- */
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 2rem;
             margin-bottom: 3rem;
         }
@@ -205,13 +205,12 @@
             margin-top: auto;
         }
 
-        /* --- Responsive Design --- */
+        /* --- Mobile Responsive Design (Vertical Stack) --- */
         @media (max-width: 900px) {
             .blog-grid {
-                grid-template-columns: 1fr;
-                max-width: 460px;
-                margin-left: auto;
-                margin-right: auto;
+                grid-template-columns: 1fr; /* Stacks cards in a single column */
+                gap: 1.5rem;
+                max-width: 100%;
             }
         }
     </style>
@@ -227,11 +226,11 @@
             </a>
         </div>
 
-        <!-- Grid with only 1 active post -->
-        <div class="blog-grid" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+        <!-- Grid Container (Inline override removed) -->
+        <div class="blog-grid">
             
             <!-- Live Post 1 -->
-            <article class="blog-card" style="grid-column: span 1;">
+            <article class="blog-card">
                 <div class="blog-card-image-wrapper">
                     <img src="images/bed-sheet-cocoon.png" alt="Cartoon illustration of a young female wrapped tightly like a burrito in a light-patterned bedsheet on her bed, looking thoughtfully up at the ceiling" width="1440" height="800" loading="lazy" title="The Late-Night Bed Sheet Cocoon Experience">
                     <div class="blog-card-overlay">
@@ -248,7 +247,7 @@
             </article>
 
             <!-- Live Post 2 -->
-            <article class="blog-card" style="grid-column: span 1;">
+            <article class="blog-card">
                 <div class="blog-card-image-wrapper">
                     <img src="images/bed-sheet-laundry-day-struggle.png" alt="Cartoon illustration of a young woman with messy hair looking frustrated and annoyed as she strips a heavy patterned bedsheet off her mattress, next to an overflowing laundry basket and a laptop displaying a washing calculator" width="1440" height="800" loading="lazy">
                     <div class="blog-card-overlay" title="The Bed Sheet Laundry Day Struggle">
@@ -263,24 +262,6 @@
                     </div>
                 </div>
             </article>
-            
-            <!-- Live Post 3
-            <article class="blog-card" style="grid-column: span 1;">
-                <div class="blog-card-image-wrapper">
-                    <img src="images/bed-sheet-laundry-day-struggle.png" alt="Cartoon illustration of a young female wrapped tightly like a burrito in a light-patterned bedsheet on her bed, looking thoughtfully up at the ceiling" width="1440" height="800" loading="lazy">
-                    <div class="blog-card-overlay">
-                        <h2 class="overlay-title">Why You Keep Putting Off Washing Your Bedsheet?</h2>
-                    </div>
-                </div>
-                <div class="blog-card-content">
-                    <p>How’s your bedsheet doing? Quite bad! But you acknowledged it's been way too long, and then promptly crawled back under it anyway?</p>
-                    <div class="blog-card-footer">
-                        <span>3 min read</span>
-                        <a href="why-you-keep-putting-off-washing-your-bedsheet.html" class="read-more-btn">Read Post →</a>
-                    </div>
-                </div>
-            </article>
-            -->
 
         </div>
 
