@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Short & Catchy SEO Title -->
+    <title>Bedsheet Wash Calculator</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FMM4RJWQ06"></script>
@@ -12,25 +21,14 @@
     gtag('config', 'G-FMM4RJWQ06');
     </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Short & Catchy SEO Title -->
-    <title>Bedsheet Wash Calculator</title>
-    
     <!-- Essential SEO Meta Tags -->
     <meta name="description" content="Use our free Bedsheet Wash Calculator to find the ideal water temperature, wash cycle, and custom care plan for any sheet fabric in under 45 seconds.">
     <meta name="keywords" content="bedsheet wash calculator, how to wash bedsheets, best water temperature for sheets, how often to wash bedsheets, cotton sheet washing guide, bamboo sheets laundry settings, remove pet hair from bedsheets, dust mite allergen sheet wash, custom laundry care tool, bed linen washing instructions, shrink prevention for bed sheets, hygienic bedding wash routine">
     <meta name="author" content="BedsheetWashCalculator.com">
     <link rel="canonical" href="https://bedsheetwashcalculator.com/">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.png">
-    <!-- Optional for modern mobile devices/PNG icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
-
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Bedsheet Wash Calculator | Custom Laundry Guide">
+    <meta property="og:title" content="Bedsheet Wash Calculator">
     <meta property="og:description" content="Find the ideal water temperature and wash cycle for your bedsheets in under 45 seconds.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bedsheetwashcalculator.com/">
@@ -72,13 +70,6 @@
                 </div>
             </header>
 
-            <!-- Invisible AdSense Space Reservation (Hidden during Questionnaire & Results) -->
-            <div id="ad-wrapper" class="max-w-md mx-auto mb-6 text-center">
-                <div class="ad-placeholder rounded-xl">
-                    <!-- Future Google AdSense script goes here -->
-                </div>
-            </div>
-
             <!-- Main Central Content Area -->
             <div class="text-center px-2 py-2">
                 
@@ -86,7 +77,7 @@
                 <div id="welcome-screen" class="transparent-box max-w-lg mx-auto space-y-6">
                     <h2 class="text-xl sm:text-2xl font-bold text-slate-800">Get Your Custom Wash Plan</h2>
                     <div>
-                        <button id="start-btn" class="start-btn uppercase font-bold text-base sm:text-lg px-10 py-4 rounded-xl text-white bg-rose-500 hover:bg-rose-600 transition-all duration-200">
+                        <button id="start-btn" class="start-btn uppercase font-bold text-base sm:text-lg px-10 py-4 rounded-xl text-white bg-rose-500 hover:bg-rose-600 transition-all duration-200 cursor-pointer">
                             START
                         </button>
                     </div>
@@ -100,10 +91,10 @@
                 <!-- Questionnaire container (hidden initially) -->
                 <div id="questionnaire-container" class="hidden transparent-box max-w-lg mx-auto text-left relative">
                     
-                    <!-- Top Navigation: Back to Homepage -->
+                    <!-- Top Navigation: Homepage -->
                     <div class="mb-5">
-                        <button id="home-link-btn" class="text-xs font-semibold text-rose-600 hover:text-rose-700 inline-flex items-center gap-1 transition-colors">
-                            &larr; Back to Homepage
+                        <button id="home-link-btn" class="text-xs font-semibold text-rose-600 hover:text-rose-700 inline-flex items-center gap-1 transition-colors cursor-pointer">
+                            &larr; Homepage
                         </button>
                     </div>
 
@@ -124,23 +115,23 @@
 
                     <!-- Bottom Navigation (Borderless Underlined Back, Skip & Next) -->
                     <div class="flex justify-between items-center pt-3 border-t border-white/50">
-                        <button id="prev-btn" class="text-xs sm:text-sm font-bold text-slate-600 hover:text-rose-600 underline underline-offset-4 transition-colors">
+                        <button id="prev-btn" class="text-xs sm:text-sm font-bold text-slate-600 hover:text-rose-600 underline underline-offset-4 transition-colors cursor-pointer">
                             Back
                         </button>
                         <div class="flex gap-4">
-                            <button id="skip-btn" class="text-xs sm:text-sm font-bold text-slate-400 hover:text-slate-600 underline underline-offset-4 transition-colors">
+                            <button id="skip-btn" class="text-xs sm:text-sm font-bold text-slate-400 hover:text-slate-600 underline underline-offset-4 transition-colors cursor-pointer">
                                 Skip
                             </button>
-                            <button id="next-btn" class="text-xs sm:text-sm font-bold text-rose-600 hover:text-rose-700 underline underline-offset-4 transition-colors">
+                            <button id="next-btn" class="text-xs sm:text-sm font-bold text-rose-600 hover:text-rose-700 underline underline-offset-4 transition-colors cursor-pointer">
                                 Next
                             </button>
                         </div>
                     </div>
 
-                    <!-- Bottom Link: Read the Blog -->
+                    <!-- Bottom Link: Blog -->
                     <div class="text-center mt-6">
                         <a href="blog.html" class="text-[11px] font-semibold text-slate-500 hover:text-rose-600 transition-colors uppercase tracking-wider">
-                            Read the blog
+                            Blog
                         </a>
                     </div>
 
@@ -149,10 +140,10 @@
                 <!-- Results Prescription Card (Prominent & Top-Focused) -->
                 <div id="results-container" class="hidden prescription-card max-w-lg mx-auto text-left space-y-6">
                     
-                    <!-- Top Navigation: Back to Homepage -->
+                    <!-- Top Navigation: Homepage -->
                     <div>
-                        <button id="results-home-btn" class="text-xs font-semibold text-rose-600 hover:text-rose-700 inline-flex items-center gap-1 transition-colors">
-                            &larr; Back to Homepage
+                        <button id="results-home-btn" class="text-xs font-semibold text-rose-600 hover:text-rose-700 inline-flex items-center gap-1 transition-colors cursor-pointer">
+                            &larr; Homepage
                         </button>
                     </div>
 
@@ -218,24 +209,24 @@
                         </div>
                     </div>
 
-                    <!-- Disclaimer Paragraph (Input Summary) -->
+                    <!-- Mandatory Footer Disclaimer on Results Page -->
                     <div class="bg-slate-50/80 p-4 rounded-2xl border border-slate-200">
-                        <p id="summary-paragraph" class="text-xs text-slate-500 font-light leading-relaxed italic text-center">
-                            <!-- Dynamic summary paragraph -->
+                        <p class="disclaimer-text text-[11px] text-slate-500 max-w-lg mx-auto px-2 font-normal text-center">
+                            <strong><u>Disclaimer</u>:</strong> General recommendations based on standard textile care and hygiene guidelines. While regular washing helps reduce allergens and dust mites, this tool does not provide medical or dermatological advice. Consult a healthcare professional for severe allergies or skin conditions. Always check manufacturer labels before washing.
                         </p>
                     </div>
 
-                    <!-- 4. Interactive Action Buttons (Hidden if all skipped) -->
+                    <!-- 4. Interactive Action Buttons -->
                     <div id="results-actions" class="pt-2 flex flex-col sm:flex-row gap-3">
-                        <button id="copy-btn" class="flex-1 uppercase font-bold text-xs py-3 px-4 rounded-xl text-white bg-rose-600 hover:bg-rose-700 transition-all duration-200 tracking-wider shadow-lg">
+                        <button id="copy-btn" class="flex-1 uppercase font-bold text-xs py-3 px-4 rounded-xl text-white bg-rose-600 hover:bg-rose-700 transition-all duration-200 tracking-wider shadow-lg cursor-pointer">
                             📋 Copy Wash Plan
                         </button>
-                        <button id="restart-calc-btn" class="flex-1 uppercase font-bold text-xs py-3 px-4 rounded-xl text-rose-700 bg-white hover:bg-rose-50 border border-rose-300 transition-all duration-200 tracking-wider shadow-sm">
-                            🔄 Take Questionnaire Again
+                        <button id="restart-calc-btn" class="flex-1 uppercase font-bold text-xs py-3 px-4 rounded-xl text-rose-700 bg-white hover:bg-rose-50 border border-rose-300 transition-all duration-200 tracking-wider shadow-sm cursor-pointer">
+                            🔄 Restart
                         </button>
                     </div>
 
-                    <!-- Share Calculator Button Placed Below Main Action Buttons -->
+                    <!-- Share Calculator Button (Only on Result Page) -->
                     <div class="pt-1">
                         <button onclick="shareCalculator()" class="w-full uppercase font-bold text-xs py-3 px-4 rounded-xl text-rose-700 bg-white hover:bg-rose-50 border border-rose-300 transition-all duration-200 tracking-wider shadow-sm cursor-pointer flex items-center justify-center gap-2">
                             <span>🔗</span> Share Calculator
@@ -244,15 +235,15 @@
 
                     <!-- All-Skipped State Single Action Button -->
                     <div id="skipped-action-container" class="hidden pt-2 text-center">
-                        <button id="retry-questionnaire-btn" class="uppercase font-bold text-xs py-3 px-8 rounded-xl text-white bg-rose-600 hover:bg-rose-700 transition-all duration-200 tracking-wider shadow-lg">
-                            Take Questionnaire Again
+                        <button id="retry-questionnaire-btn" class="uppercase font-bold text-xs py-3 px-8 rounded-xl text-white bg-rose-600 hover:bg-rose-700 transition-all duration-200 tracking-wider shadow-lg cursor-pointer">
+                            Restart
                         </button>
                     </div>
 
-                    <!-- Bottom Link: Read the Blog -->
+                    <!-- Bottom Link: Blog -->
                     <div class="text-center pt-2">
                         <a href="blog.html" class="text-[11px] font-bold text-rose-600 hover:text-rose-700 transition-colors uppercase tracking-wider underline underline-offset-4">
-                            Read the blog
+                            Blog
                         </a>
                     </div>
 
@@ -267,8 +258,8 @@
     <footer id="page-footer" class="w-full bg-white/30 backdrop-blur-sm border-t border-rose-100/60 py-5 px-4 sm:px-6">
         <div class="max-w-xl mx-auto text-center space-y-3">
             
-            <!-- Share Calculator Button in Homepage Footer -->
-            <div class="pb-3 mb-3 border-b border-rose-100/60 max-w-xs mx-auto">
+            <!-- Share Calculator Button in Homepage Footer (Only on Homepage Welcome State) -->
+            <div id="footer-share-wrapper" class="pb-3 mb-3 border-b border-rose-100/60 max-w-xs mx-auto">
                 <button onclick="shareCalculator()" class="w-full uppercase font-bold text-xs py-2 px-4 rounded-xl text-rose-700 bg-white/80 hover:bg-white border border-rose-300 transition-all duration-200 tracking-wider shadow-sm cursor-pointer flex items-center justify-center gap-2">
                     <span>🔗</span> Share Calculator
                 </button>
