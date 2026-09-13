@@ -1,3 +1,28 @@
+// ==========================================
+// 1. SHARE CALCULATOR HANDLER
+// ==========================================
+function shareCalculator() {
+    const shareData = {
+        title: 'Bedsheet Wash Calculator',
+        text: 'Check out this free tool to find the exact wash cycle and temperature for your bedsheets!',
+        url: 'https://bedsheetwashcalculator.com/'
+    };
+
+    if (navigator.share) {
+        navigator.share(shareData).catch((err) => console.log('Share canceled', err));
+    } else {
+        navigator.clipboard.writeText(shareData.url).then(() => {
+            alert('Website link copied to clipboard! You can now paste and share it.');
+        }).catch(() => {
+            alert('Share link: https://bedsheetwashcalculator.com/');
+        });
+    }
+}
+
+
+// ==========================================
+// 2. QUESTIONNAIRE DATA & STATE
+// ==========================================
 const questions = [
     {
         title: "1. What size are your sheets?",
@@ -48,8 +73,8 @@ const welcomeScreen = document.getElementById('welcome-screen');
 const questionnaireContainer = document.getElementById('questionnaire-container');
 const resultsContainer = document.getElementById('results-container');
 const pageHeader = document.getElementById('page-header');
-const adWrapper = document.getElementById('ad-wrapper');
 const pageFooter = document.getElementById('page-footer');
+const footerShareWrapper = document.getElementById('footer-share-wrapper');
 
 const startBtn = document.getElementById('start-btn');
 const homeLinkBtn = document.getElementById('home-link-btn');
@@ -73,8 +98,7 @@ startBtn.addEventListener('click', () => {
     welcomeScreen.classList.add('hidden');
     questionnaireContainer.classList.remove('hidden');
     pageHeader.classList.add('hidden');
-    adWrapper.classList.add('hidden');
-    pageFooter.classList.add('hidden');
+    pageFooter.classList.add('hidden'); // Hide footer entirely during questionnaire
     renderQuestion(currentQuestionIndex);
 });
 
@@ -84,8 +108,8 @@ function resetToHome() {
     welcomeScreen.classList.remove('hidden');
     
     pageHeader.classList.remove('hidden');
-    adWrapper.classList.remove('hidden');
     pageFooter.classList.remove('hidden');
+    if (footerShareWrapper) footerShareWrapper.classList.remove('hidden'); // Show share button on homepage footer
 
     currentQuestionIndex = 0;
     for (let key in userAnswers) delete userAnswers[key];
@@ -119,7 +143,6 @@ function renderQuestion(index) {
         const isSelected = userAnswers[index] === optIdx;
         const div = document.createElement('div');
         
-        // Dynamic card styling based on selection state
         div.className = `flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all ${
             isSelected 
                 ? 'bg-rose-50 border-rose-500 text-rose-900 shadow-sm' 
@@ -133,16 +156,13 @@ function renderQuestion(index) {
             <span class="text-sm font-medium">${opt}</span>
         `;
 
-        // Click handler with toggle / deselection logic
         div.addEventListener('click', () => {
             if (userAnswers[index] === optIdx) {
-                // Deselect if already selected
                 userAnswers[index] = undefined;
             } else {
-                // Select new option
                 userAnswers[index] = optIdx;
             }
-            renderQuestion(currentQuestionIndex); // Re-render to update UI states
+            renderQuestion(currentQuestionIndex);
         });
 
         optionsContainer.appendChild(div);
@@ -152,13 +172,12 @@ function renderQuestion(index) {
     
     if (index === questions.length - 1) {
         nextBtn.textContent = "✨ Calculate Plan";
-        nextBtn.className = "calculate-btn transition-all duration-200";
+        nextBtn.className = "calculate-btn transition-all duration-200 cursor-pointer";
     } else {
         nextBtn.textContent = "Next";
-        nextBtn.className = "text-xs sm:text-sm font-bold text-rose-600 hover:text-rose-700 underline underline-offset-4 transition-colors";
+        nextBtn.className = "text-xs sm:text-sm font-bold text-rose-600 hover:text-rose-700 underline underline-offset-4 transition-colors cursor-pointer";
     }
 
-    // Show skip button only if nothing is currently selected for this question
     if (userAnswers[index] !== undefined && userAnswers[index] !== null) {
         skipBtn.classList.add('hidden');
     } else {
@@ -182,7 +201,7 @@ nextBtn.addEventListener('click', () => {
 });
 
 skipBtn.addEventListener('click', () => {
-    userAnswers[currentQuestionIndex] = null; // Explicitly marked as skipped
+    userAnswers[currentQuestionIndex] = null;
 
     if (currentQuestionIndex < questions.length - 1) {
         currentQuestionIndex++;
@@ -204,8 +223,8 @@ function generateResults() {
     resultsContainer.classList.remove('hidden');
 
     pageHeader.classList.add('hidden');
-    adWrapper.classList.add('hidden');
-    pageFooter.classList.add('hidden');
+    pageFooter.classList.remove('hidden'); // Show footer on results page so share button appears there
+    if (footerShareWrapper) footerShareWrapper.classList.add('hidden'); // Hide footer share button since result card has its own share button
 
     let answeredCount = 0;
     questions.forEach((q, idx) => {
@@ -219,9 +238,6 @@ function generateResults() {
         resultsActions.classList.add('hidden');
         skippedActionContainer.classList.remove('hidden');
         washTimelineBanner.classList.add('hidden');
-
-        document.getElementById('summary-paragraph').textContent = 
-            "You haven't answered anything. Please take the questionnaire again to receive your personalized bedsheet wash prescription.";
     } else {
         resultsBodyContent.classList.remove('hidden');
         resultsActions.classList.remove('hidden');
@@ -259,18 +275,6 @@ function generateResults() {
                 washTimelineBanner.innerHTML = "<span>💡</span> Wash Frequency Note: Aim for a regular 7-day wash cycle to prevent buildup of body oils and allergens.";
             }
         }
-
-        const answeredParts = [];
-        questions.forEach((q, idx) => {
-            const ansIdx = userAnswers[idx];
-            if (ansIdx !== null && ansIdx !== undefined) {
-                const cleanQTitle = q.title.replace(/^\d+\.\s*/, '').toLowerCase();
-                answeredParts.push(`${cleanQTitle} (${q.options[ansIdx].toLowerCase()})`);
-            }
-        });
-        
-        document.getElementById('summary-paragraph').textContent = 
-            `Disclaimer: This custom wash prescription has been prepared based on your inputs regarding ${answeredParts.slice(0, 3).join(', ')}, and other care preferences.`;
 
         const fabricIdx = userAnswers[1] !== undefined && userAnswers[1] !== null ? userAnswers[1] : 0;
         const allergyIdx = userAnswers[5] !== undefined && userAnswers[5] !== null ? userAnswers[5] : 0;
