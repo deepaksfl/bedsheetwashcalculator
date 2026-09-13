@@ -2,273 +2,120 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Blog & Linen Care Tips | BedsheetWashCalculator.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO META DESCRIPTION -->
-    <meta name="description" content="Read lighthearted stories, linen care guides, and expert sleep hygiene insights from BedsheetWashCalculator.com." />
-    
-    <!-- GOOGLE FONTS -->
+    <!-- SEO Title & Meta Tags -->
+    <title>Bedding Care & Laundry Blog | Bedsheet Wash Calculator</title>
+    <meta name="description" content="Explore expert tips, guides, and articles on how to wash bedsheets, remove tough oil stains, manage allergies, and extend the lifespan of your linens.">
+    <meta name="keywords" content="bedsheet care blog, laundry tips, how to wash sheets, remove yellow stains from pillows, bamboo sheet care, dust mite prevention">
+    <link rel="canonical" href="https://bedsheetwashcalculator.com/blog.html">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Nunito Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <style>
-        /* --- Matching Homepage Color Variables (Neutral / No Blue) --- */
-        :root {
-            --primary: #1f2937;
-            --primary-dark: #111827;
-            --primary-light: #f3f4f6;
-            --slate-50: #f9fafb;
-            --slate-100: #f3f4f6;
-            --slate-250: #e5e7eb;
-            --slate-700: #374151;
-            --slate-800: #1f2937;
-            --slate-900: #111827;
-            --slate-500: #6b7280;
-            --card-bg: #ffffff;
-            --border-box: #e5e7eb;
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            --radius-lg: 16px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--slate-100);
-            color: var(--slate-800);
-            line-height: 1.7;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* --- Main Layout Wrapper --- */
-        .blog-page-wrapper {
-            width: 100%;
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
-            flex: 1;
-        }
-
-        /* --- Navigation Helper --- */
-        .back-nav {
-            margin-bottom: 2rem;
-        }
-
-        .back-calculator-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background-color: var(--card-bg);
-            color: var(--slate-900);
-            border: 1px solid var(--border-box);
-            padding: 0.6rem 1.25rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.2s ease;
-        }
-
-        .back-calculator-btn:hover {
-            background-color: var(--slate-900);
-            color: var(--card-bg);
-            border-color: var(--slate-900);
-            transform: translateY(-1px);
-        }
-
-        /* --- Desktop Grid Layout --- */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        /* --- Blog Card Styles --- */
-        .blog-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-box);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-        }
-
-        /* --- Image Fragment with Linear Gradient & Overlay Title --- */
-        .blog-card-image-wrapper {
-            position: relative;
-            width: 100%;
-            height: 240px;
-            overflow: hidden;
-            background-color: var(--slate-100);
-        }
-
-        .blog-card-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .blog-card:hover .blog-card-image-wrapper img {
-            transform: scale(1.03);
-        }
-
-        /* Linear Gradient Overlay */
-        .blog-card-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(17, 24, 39, 0.2) 0%, rgba(17, 24, 39, 0.85) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 1.25rem;
-        }
-
-        /* Short & Catchy Overlay Title */
-        .overlay-title {
-            color: #ffffff;
-            font-size: 1.15rem;
-            font-weight: 800;
-            line-height: 1.35;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-
-        /* --- Blog Card Content Body --- */
-        .blog-card-content {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
-        .blog-card p {
-            font-size: 0.95rem;
-            color: var(--slate-600, #4b5563);
-            margin-bottom: 1.5rem;
-            flex: 1;
-        }
-
-        .blog-card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid var(--slate-100);
-            padding-top: 1rem;
-            font-size: 0.85rem;
-            color: var(--slate-500);
-        }
-
-        .read-more-btn {
-            background-color: var(--slate-900);
-            color: #ffffff;
-            font-weight: 700;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            transition: opacity 0.2s ease;
-        }
-
-        .read-more-btn:hover {
-            opacity: 0.85;
-        }
-
-        /* --- Clean Footer --- */
-        .site-footer {
-            background-color: var(--card-bg);
-            border-top: 1px solid var(--border-box);
-            text-align: center;
-            padding: 1.5rem;
-            color: var(--slate-500);
-            font-size: 0.875rem;
-            margin-top: auto;
-        }
-
-        /* --- Mobile Responsive Design (Vertical Stack) --- */
-        @media (max-width: 900px) {
-            .blog-grid {
-                grid-template-columns: 1fr; /* Stacks cards in a single column */
-                gap: 1.5rem;
-                max-width: 100%;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="flex flex-col min-h-screen text-slate-700 antialiased">
 
-    <main class="blog-page-wrapper">
-        
-        <!-- Back to Calculator Button -->
-        <div class="back-nav">
-            <a href="index.html" class="back-calculator-btn">
-                <span>🛏️</span> Back to Calculator
-            </a>
-        </div>
-
-        <!-- Grid Container (Inline override removed) -->
-        <div class="blog-grid">
+    <!-- Main Content Container -->
+    <main class="flex-grow py-8 sm:py-12 px-4 sm:px-6">
+        <div class="max-w-5xl mx-auto w-full space-y-8">
             
-            <!-- Live Post 1 -->
-            <article class="blog-card">
-                <div class="blog-card-image-wrapper">
-                    <img src="images/bed-sheet-cocoon.png" alt="Cartoon illustration of a young female wrapped tightly like a burrito in a light-patterned bedsheet on her bed, looking thoughtfully up at the ceiling" width="1440" height="800" loading="lazy" title="The Late-Night Bed Sheet Cocoon Experience">
-                    <div class="blog-card-overlay">
-                        <h2 class="overlay-title">The Late-Night Bed Sheet Cocoon & Existential Crises</h2>
-                    </div>
+            <!-- Header Section (Brand Name Only) -->
+            <header class="text-center mb-6 sm:mb-8">
+                <div class="mb-2">
+                    <a href="index.html" class="brand-title text-2xl sm:text-3xl font-bold text-slate-800 tracking-tight inline-block pb-2 hover:opacity-90">
+                        Bedsheet Wash Calculator
+                    </a>
+                    <div class="brand-line mx-auto"></div>
                 </div>
-                <div class="blog-card-content">
-                    <p>Have you ever wrapped yourself tightly in a bed sheet, tucked your feet in, and stared at the ceiling for some time?</p>
-                    <div class="blog-card-footer">
-                        <span>3 min read</span>
-                        <a href="bed-sheet-cocoon-existential-crises.html" class="read-more-btn">Read Post →</a>
-                    </div>
-                </div>
-            </article>
+            </header>
 
-            <!-- Live Post 2 -->
-            <article class="blog-card">
-                <div class="blog-card-image-wrapper">
-                    <img src="images/bed-sheet-laundry-day-struggle.png" alt="Cartoon illustration of a young woman with messy hair looking frustrated and annoyed as she strips a heavy patterned bedsheet off her mattress, next to an overflowing laundry basket and a laptop displaying a washing calculator" width="1440" height="800" loading="lazy">
-                    <div class="blog-card-overlay" title="The Bed Sheet Laundry Day Struggle">
-                        <h2 class="overlay-title">Why You Keep Putting Off Washing Your Bedsheet?</h2>
+            <!-- Blog Grid (3 Boxes in One Row on Desktop) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Blog Box 1 -->
+                <div onclick="window.location.href='post-1.html'" class="transparent-box bg-white/70 backdrop-blur-sm p-4 rounded-2xl border border-white/90 shadow-sm flex flex-col justify-between space-y-4 cursor-pointer hover:shadow-md hover:border-rose-200 transition-all group">
+                    <div class="space-y-3">
+                        <!-- Image Container covering the top layout with rounded corners and border -->
+                        <div class="relative w-full h-44 overflow-hidden rounded-xl border border-rose-100 bg-rose-50">
+                            <img src="images/bed-sheet-cocoon.png" alt="Cozy bed sheet cocoon for late-night thoughts and relaxation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" title="The Psychology of the Late-Night Bed Sheet Cocoon">
+                        </div>
+                        <!-- Short Post Title -->
+                        <h2 class="text-sm sm:text-base font-bold text-slate-800 group-hover:text-rose-600 transition-colors leading-snug">
+                            The Late-Night Bed Sheet Cocoon!
+                        </h2>
+                        <!-- Snippet / Paragraph (Lorem) -->
+                        <p class="text-xs text-slate-600 font-light leading-relaxed">
+                            Have you ever wrapped yourself tightly in a bed sheet, tucked your feet in, and stared at the ceiling for some time?
+                        </p>
+                    </div>
+                    <!-- Read Post Option -->
+                    <div class="pt-2">
+                        <a href="the-late-night-bed-sheet-cocoon.html" class="inline-flex items-center gap-1 text-xs font-bold text-rose-600 hover:text-rose-700 uppercase tracking-wider">
+                            Read Post &rarr;
+                        </a>
                     </div>
                 </div>
-                <div class="blog-card-content">
-                    <p>How’s your bedsheet doing? Quite bad! But you acknowledged it's been way too long, and then promptly crawled back under it anyway?</p>
-                    <div class="blog-card-footer">
-                        <span>3 min read</span>
-                        <a href="why-you-keep-putting-off-washing-your-bedsheet.html" class="read-more-btn">Read Post →</a>
+
+                <!-- Blog Box 2 -->
+                <div onclick="window.location.href='post-2.html'" class="transparent-box bg-white/70 backdrop-blur-sm p-4 rounded-2xl border border-white/90 shadow-sm flex flex-col justify-between space-y-4 cursor-pointer hover:shadow-md hover:border-rose-200 transition-all group">
+                    <div class="space-y-3">
+                        <!-- Image Container -->
+                        <div class="relative w-full h-44 overflow-hidden rounded-xl border border-rose-100 bg-rose-50">
+                            <img src="images/bed-sheet-laundry-day-struggle.png" alt="Clean bedsheets and laundry basket ready for washing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" title="Why You Need a Regular Bedsheet Washing Routine">
+                        </div>
+                        <!-- Short Post Title -->
+                        <h2 class="text-sm sm:text-base font-bold text-slate-800 group-hover:text-rose-600 transition-colors leading-snug">
+                            What Your Mattress Is Trying to Tell You?
+                        </h2>
+                        <!-- Snippet / Paragraph (Lorem) -->
+                        <p class="text-xs text-slate-600 font-light leading-relaxed">
+                            How’s your bedsheet doing? Quite bad! But you acknowledged it's been way too long, and then promptly crawled back under it anyway?
+                        </p>
+                    </div>
+                    <!-- Read Post Option -->
+                    <div class="pt-2">
+                        <a href="why-you-keep-putting-off-washing-your-bedsheet.html" class="inline-flex items-center gap-1 text-xs font-bold text-rose-600 hover:text-rose-700 uppercase tracking-wider">
+                            Read Post &rarr;
+                        </a>
                     </div>
                 </div>
-            </article>
+
+
+            </div>
+
+            <!-- Bottom Return to Homepage Action -->
+            <div class="pt-6 text-center">
+                <a href="index.html" class="inline-block uppercase font-bold text-xs py-3 px-8 rounded-xl text-white bg-rose-500 hover:bg-rose-600 transition-all duration-200 tracking-wider shadow-md">
+                    Return to Homepage
+                </a>
+            </div>
 
         </div>
-
     </main>
 
-    <footer class="site-footer">
-        <div>© 2026 BedsheetWashCalculator.com. All rights reserved. Crafted for fresh, hygienic & allergy-free bedsheets.</div>
+    <!-- Standard Footer Menu (Matching Homepage) -->
+    <footer class="w-full bg-white/30 backdrop-blur-sm border-t border-rose-100/60 py-5 px-4 sm:px-6">
+        <div class="max-w-xl mx-auto text-center space-y-3">
+            <nav class="flex flex-wrap justify-center items-center gap-6 sm:gap-8 text-xs font-semibold tracking-wider text-slate-600 uppercase">
+                <a href="about.html" class="hover:text-rose-500 transition-colors">About</a>
+                <a href="blog.html" class="text-rose-600 font-bold transition-colors">Blog</a>
+                <a href="terms-of-service.html" class="hover:text-rose-500 transition-colors">Terms</a>
+                <a href="privacy-policy.html" class="hover:text-rose-500 transition-colors">Policy</a>
+                <a href="contact.html" class="hover:text-rose-500 transition-colors">Contact</a>
+            </nav>
+            <p class="disclaimer-text text-[11px] text-slate-500 max-w-lg mx-auto px-2 font-normal">
+                <strong><u>Disclaimer</u>:</strong> General recommendations based on standard textile care and hygiene guidelines. While regular washing helps reduce allergens and dust mites, this tool does not provide medical or dermatological advice. Consult a healthcare professional for severe allergies or skin conditions. Always check manufacturer labels before washing.
+            </p>
+            <div class="text-[11px] text-slate-500 font-light tracking-wide">
+                &copy; 2026 BedsheetWashCalculator.com. All rights reserved.
+            </div>
+        </div>
     </footer>
 
 </body>
