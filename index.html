@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FMM4RJWQ06"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FMM4RJWQ06');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Short & Catchy SEO Title -->
+    <title>Bedsheet Wash Calculator</title>
+    
+    <!-- Essential SEO Meta Tags -->
+    <meta name="description" content="Use our free Bedsheet Wash Calculator to find the ideal water temperature, wash cycle, and custom care plan for any sheet fabric in under 45 seconds.">
+    <meta name="keywords" content="bedsheet wash calculator, how to wash bedsheets, best water temperature for sheets, how often to wash bedsheets, cotton sheet washing guide, bamboo sheets laundry settings, remove pet hair from bedsheets, dust mite allergen sheet wash, custom laundry care tool, bed linen washing instructions, shrink prevention for bed sheets, hygienic bedding wash routine">
+    <meta name="author" content="BedsheetWashCalculator.com">
+    <link rel="canonical" href="https://bedsheetwashcalculator.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <!-- Optional for modern mobile devices/PNG icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Bedsheet Wash Calculator | Custom Laundry Guide">
+    <meta property="og:description" content="Find the ideal water temperature and wash cycle for your bedsheets in under 45 seconds.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bedsheetwashcalculator.com/">
+
+    <!-- Robots Meta -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Nunito Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="flex flex-col min-h-screen text-slate-700 antialiased">
+
+    <!-- Main Content Container -->
+    <main class="flex-grow py-8 sm:py-12 px-4 sm:px-6 flex flex-col justify-center">
+        <div class="max-w-xl mx-auto w-full">
+            
+            <!-- Header Section (Hidden during Questionnaire & Results) -->
+            <header id="page-header" class="text-center mb-6 sm:mb-8">
+                <!-- Brand Title with Lengthy Thin Underline -->
+                <div class="mb-5">
+                    <h1 class="brand-title text-2xl sm:text-3xl font-bold text-slate-800 tracking-tight inline-block pb-2">
+                        Bedsheet Wash Calculator
+                    </h1>
+                    <div class="brand-line mx-auto"></div>
+                </div>
+
+                <!-- SEO-Friendly Checkmark Points Row -->
+                <div class="flex flex-wrap justify-center items-center gap-y-2 gap-x-4 text-xs sm:text-sm font-normal text-slate-600 px-2">
+                    <span>✓ Calculate best settings for bedsheets</span>
+                    <span>✓ Calculate ideal water temp for sheets</span>
+                    <span>✓ Custom wash plan for any sheet fabric</span>
+                    <span>✓ Ready in under 45 seconds</span>
+                </div>
+            </header>
+
+            <!-- Invisible AdSense Space Reservation (Hidden during Questionnaire & Results) -->
+            <div id="ad-wrapper" class="max-w-md mx-auto mb-6 text-center">
+                <div class="ad-placeholder rounded-xl">
+                    <!-- Future Google AdSense script goes here -->
+                </div>
+            </div>
+
+            <!-- Main Central Content Area -->
+            <div class="text-center px-2 py-2">
+                
+                <!-- Welcome View / Start Screen -->
+                <div id="welcome-screen" class="transparent-box max-w-lg mx-auto space-y-6">
+                    <h2 class="text-xl sm:text-2xl font-bold text-slate-800">Get Your Custom Wash Plan</h2>
+                    <div>
+                        <button id="start-btn" class="start-btn uppercase font-bold text-base sm:text-lg px-10 py-4 rounded-xl text-white bg-rose-500 hover:bg-rose-600 transition-all duration-200">
+                            START
+                        </button>
+                    </div>
+                    <div>
+                        <p class="text-xs sm:text-sm text-slate-500 font-light max-w-md mx-auto leading-relaxed">
+                            Answer a few quick questions about your bedsheets to discover the optimal wash cycle, water temperature, and care settings.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Questionnaire container (hidden initially) -->
+                <div id="questionnaire-container" class="hidden transparent-box max-w-lg mx-auto text-left relative">
+                    
+                    <!-- Top Navigation: Back to Homepage -->
+                    <div class="mb-5">
+                        <button id="home-link-btn" class="text-xs font-semibold text-rose-600 hover:text-rose-700 inline-flex items-center gap-1 transition-colors">
+                            &larr; Back to Homepage
+                        </button>
+                    </div>
+
+                    <!-- Progress Indicator -->
+                    <div class="text-xs font-medium text-rose-500 uppercase tracking-widest mb-2" id="question-counter">
+                        Question 1 of 10
+                    </div>
+
+                    <!-- Question Title with Subtle Shadow -->
+                    <h3 id="question-title" class="question-title text-lg sm:text-xl font-bold text-slate-800 mb-5">
+                        <!-- Dynamic Question Text -->
+                    </h3>
+
+                    <!-- Options Container (4 Toggleable Options) -->
+                    <div id="options-container" class="space-y-3 mb-8">
+                        <!-- Dynamic Options -->
+                    </div>
+
+                    <!-- Bottom Navigation (Borderless Underlined Back, Skip & Next) -->
+                    <div class="flex justify-between items-center pt-3 border-t border-white/50">
+                        <button id="prev-btn" class="text-xs sm:text-sm font-bold text-slate-600 hover:text-rose-600 underline underline-offset-4 transition-colors">
+                            Back
+                        </button>
+                        <div class="flex gap-4">
+                            <button id="skip-btn" class="text-xs sm:text-sm font-bold text-slate-400 hover:text-slate-600 underline underline-offset-4 transition-colors">
+                                Skip
+                            </button>
+                            <button id="next-btn" class="text-xs sm:text-sm font-bold text-rose-600 hover:text-rose-700 underline underline-offset-4 transition-colors">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Link: Read the Blog -->
+                    <div class="text-center mt-6">
+                        <a href="blog.html" class="text-[11px] font-semibold text-slate-500 hover:text-rose-600 transition-colors uppercase tracking-wider">
+                            Read the blog
+                        </a>
+                    </div>
+
+                </div>
+
+                <!-- Results Prescription Card (Prominent & Top-Focused) -->
+                <div id="results-container" class="hidden prescription-card max-w-lg mx-auto text-left space-y-6">
+                    
+                    <!-- Top Navigation: Back to Homepage -->
+                    <div>
+                        <button id="results-home-btn" class="text-xs font-semibold text-rose-600 hover:text-rose-700 inline-flex items-center gap-1 transition-colors">
+                            &larr; Back to Homepage
+                        </button>
+                    </div>
+
+                    <div class="text-center pb-3 border-b border-rose-200/60">
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Your Custom Wash Prescription</h2>
+                    </div>
+
+                    <!-- Dynamic Results Body Wrapper -->
+                    <div id="results-body-content" class="space-y-6">
+                        
+                        <!-- 1. The Custom "Wash Recipe" -->
+                        <div class="space-y-3 bg-white/80 p-5 rounded-2xl border-2 border-rose-200 shadow-md">
+                            
+                            <!-- Timeline / Next Wash Alert Banner (Dynamically populated) -->
+                            <div id="wash-timeline-banner" class="hidden mb-4 p-3 rounded-xl border text-xs font-bold flex items-center gap-2">
+                                <!-- Dynamic timeline text -->
+                            </div>
+
+                            <h3 class="text-xs font-bold text-rose-700 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                                <span>✨</span> 1. The Custom "Wash Recipe"
+                            </h3>
+                            <div class="flex items-start gap-3">
+                                <span class="text-2xl">🌡️</span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wide">Recommended Water Temperature</h4>
+                                    <p id="res-temp" class="text-base font-bold text-slate-900">Warm (30°C / 85°F)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 pt-3 border-t border-rose-100">
+                                <span class="text-2xl">⏱️</span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wide">Ideal Cycle & Speed</h4>
+                                    <p id="res-cycle" class="text-base font-bold text-slate-900">Normal Cycle, Medium Spin</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 pt-3 border-t border-rose-100">
+                                <span class="text-2xl">🧼</span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wide">Detergent & Additive Guidance</h4>
+                                    <p id="res-detergent" class="text-sm font-semibold text-slate-800">Use standard measured liquid detergent. Extra rinse recommended to clear soap residue.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. The Habit & Hygiene Insight -->
+                        <div class="space-y-2 bg-rose-50/80 p-4 rounded-2xl border border-rose-200 shadow-sm">
+                            <h3 class="text-xs font-bold text-rose-600 uppercase tracking-wider flex items-center gap-1.5">
+                                <span>💡</span> 2. The Habit & Hygiene Insight
+                            </h3>
+                            <p id="res-insight" class="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+                                <!-- Dynamic insight -->
+                            </p>
+                        </div>
+
+                        <!-- 3. Drying & Wrinkle Care Tip -->
+                        <div class="space-y-2 bg-white/70 p-4 rounded-2xl border border-rose-100 shadow-sm">
+                            <h3 class="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+                                <span>💨</span> 3. Drying & Wrinkle Care Tip
+                            </h3>
+                            <p id="res-drying" class="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+                                <!-- Dynamic drying tip -->
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Disclaimer Paragraph (Input Summary) -->
+                    <div class="bg-slate-50/80 p-4 rounded-2xl border border-slate-200">
+                        <p id="summary-paragraph" class="text-xs text-slate-500 font-light leading-relaxed italic text-center">
+                            <!-- Dynamic summary paragraph -->
+                        </p>
+                    </div>
+
+                    <!-- 4. Interactive Action Buttons (Hidden if all skipped) -->
+                    <div id="results-actions" class="pt-2 flex flex-col sm:flex-row gap-3">
+                        <button id="copy-btn" class="flex-1 uppercase font-bold text-xs py-3 px-4 rounded-xl text-white bg-rose-600 hover:bg-rose-700 transition-all duration-200 tracking-wider shadow-lg">
+                            📋 Copy Wash Plan
+                        </button>
+                        <button id="restart-calc-btn" class="flex-1 uppercase font-bold text-xs py-3 px-4 rounded-xl text-rose-700 bg-white hover:bg-rose-50 border border-rose-300 transition-all duration-200 tracking-wider shadow-sm">
+                            🔄 Take Questionnaire Again
+                        </button>
+                    </div>
+
+                    <!-- Share Calculator Button Placed Below Main Action Buttons -->
+                    <div class="pt-1">
+                        <button onclick="shareCalculator()" class="w-full uppercase font-bold text-xs py-3 px-4 rounded-xl text-rose-700 bg-white hover:bg-rose-50 border border-rose-300 transition-all duration-200 tracking-wider shadow-sm cursor-pointer flex items-center justify-center gap-2">
+                            <span>🔗</span> Share Calculator
+                        </button>
+                    </div>
+
+                    <!-- All-Skipped State Single Action Button -->
+                    <div id="skipped-action-container" class="hidden pt-2 text-center">
+                        <button id="retry-questionnaire-btn" class="uppercase font-bold text-xs py-3 px-8 rounded-xl text-white bg-rose-600 hover:bg-rose-700 transition-all duration-200 tracking-wider shadow-lg">
+                            Take Questionnaire Again
+                        </button>
+                    </div>
+
+                    <!-- Bottom Link: Read the Blog -->
+                    <div class="text-center pt-2">
+                        <a href="blog.html" class="text-[11px] font-bold text-rose-600 hover:text-rose-700 transition-colors uppercase tracking-wider underline underline-offset-4">
+                            Read the blog
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Compact & Streamlined Footer Section -->
+    <footer id="page-footer" class="w-full bg-white/30 backdrop-blur-sm border-t border-rose-100/60 py-5 px-4 sm:px-6">
+        <div class="max-w-xl mx-auto text-center space-y-3">
+            
+            <!-- Share Calculator Button in Homepage Footer -->
+            <div class="pb-3 mb-3 border-b border-rose-100/60 max-w-xs mx-auto">
+                <button onclick="shareCalculator()" class="w-full uppercase font-bold text-xs py-2 px-4 rounded-xl text-rose-700 bg-white/80 hover:bg-white border border-rose-300 transition-all duration-200 tracking-wider shadow-sm cursor-pointer flex items-center justify-center gap-2">
+                    <span>🔗</span> Share Calculator
+                </button>
+            </div>
+
+            <nav class="flex flex-wrap justify-center items-center gap-6 sm:gap-8 text-xs font-semibold tracking-wider text-slate-600 uppercase">
+                <a href="about.html" class="hover:text-rose-500 transition-colors">About</a>
+                <a href="blog.html" class="hover:text-rose-500 transition-colors">Blog</a>
+                <a href="terms-of-service.html" class="hover:text-rose-500 transition-colors">Terms</a>
+                <a href="privacy-policy.html" class="hover:text-rose-500 transition-colors">Policy</a>
+                <a href="contact.html" class="hover:text-rose-500 transition-colors">Contact</a>
+            </nav>
+            <p class="disclaimer-text text-[11px] text-slate-500 max-w-lg mx-auto px-2 font-normal">
+                <strong><u>Disclaimer</u>:</strong> General recommendations based on standard textile care and hygiene guidelines. While regular washing helps reduce allergens and dust mites, this tool does not provide medical or dermatological advice. Consult a healthcare professional for severe allergies or skin conditions. Always check manufacturer labels before washing.
+            </p>
+            <div class="text-[11px] text-slate-500 font-light tracking-wide">
+                &copy; 2026 BedsheetWashCalculator.com. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Linked External JavaScript File -->
+    <script src="js/main.js"></script>
+</body>
+</html>
