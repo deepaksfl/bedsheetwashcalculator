@@ -53,8 +53,13 @@ const questions = [
         options: ["Very strict (Always wash on a fixed weekly day)", "Flexible (Wash whenever I remember or notice them)", "Delayed (Only wash when they start smelling or feeling stale)", "Sporadic (No fixed routine at all)"]
     },
     {
-        title: "8. Why was this particular wash delayed (if at all)?",
-        options: ["Not delayed—right on schedule!", "Just got too busy with work or life", "Kept putting off stripping and making the bed again", "Waited for a full load of laundry to pile up"]
+        title: "8. How do you typically dry your bedsheets?",
+        options: [
+            "Tumble dry (Low / Delicates)",
+            "Tumble dry (Normal / Medium)",
+            "Line dried / Air dried outdoors",
+            "Combination of air drying & light tumbling"
+        ]
     },
     {
         title: "9. What is your main goal for this specific wash?",
@@ -278,6 +283,7 @@ function generateResults() {
 
         const fabricIdx = userAnswers[1] !== undefined && userAnswers[1] !== null ? userAnswers[1] : 0;
         const allergyIdx = userAnswers[5] !== undefined && userAnswers[5] !== null ? userAnswers[5] : 0;
+        const dryingMethodIdx = userAnswers[7];
 
         let tempText = "Warm (30°C / 85°F)";
         let cycleText = "Normal Cycle, Medium Spin";
@@ -292,9 +298,18 @@ function generateResults() {
 
         if (fabricIdx === 1 || fabricIdx === 2) {
             cycleText = "Gentle / Delicate Cycle, Low Spin (600 RPM)";
-            dryingText = "Remove bamboo or linen sheets while slightly damp (avoid bone-dry) to prevent deep wrinkles and maintain breathability.";
         } else if (fabricIdx === 3) {
             cycleText = "Permanent Press / Synthetic Cycle";
+        }
+
+        // Custom Drying Advice Mapping based on Question 8 answer
+        if (dryingMethodIdx === 2) {
+            dryingText = "Since you line dry your sheets, hang them out in indirect sunlight or a breezy shaded area to keep natural fibers crisp and prevent UV fading.";
+        } else if (dryingMethodIdx === 0) {
+            dryingText = "Since you use low-heat tumble drying, make sure to remove the sheets promptly while slightly warm to avoid set-in creases.";
+        } else if (fabricIdx === 1 || fabricIdx === 2) {
+            dryingText = "Remove bamboo or linen sheets while slightly damp (avoid bone-dry) to prevent deep wrinkles and maintain breathability.";
+        } else if (fabricIdx === 3) {
             dryingText = "Tumble dry on low heat to prevent static cling and pilling.";
         }
 
